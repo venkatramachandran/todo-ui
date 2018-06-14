@@ -1,6 +1,6 @@
 angular.module('todo-ui', ['ngResource'])
 .factory('Todo', function($resource) {
-    return $resource('http://todo-api/todos/:id', {id: '@id'},
+    return $resource('/api/todos/:id', {id: '@id'},
     {get: {method: 'GET', isArray: true},
     create: {method: 'POST'},
     update: {method: 'PUT'},
