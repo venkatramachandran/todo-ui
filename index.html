@@ -5,24 +5,25 @@
     <script src="angular.js"></script>
     <script src="angular-resource.js"></script>
     <script src="todo-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
 </head>
 
 <body ng-controller="TodoController">
-    <h3>Todos:</h3>
+    <h3>Todos</h3>
     <div>
         <ul>
             <li ng-repeat="todo in todoList" id="{{todo.id}}">
                 <div>
                     <input type="checkbox" ng-model="todo.complete" ng-change="updateComplete(todo)"/>
-                    {{todo.todo}}
-                    <input type="button" ng-click="deleteTodo(todo.id)" value="X"/>
+                    <span ng-class="{complete: todo.complete}">{{todo.todo}}</span>
+                    <input type="button" class="del" ng-click="deleteTodo(todo.id)" value="❌"/>
                 </div>
                 
             </li>
         </ul>
     </div>
     <input type="text" ng-model="newTodo" placeholder="Enter a todo">
-    <input type="button" ng-click="createTodo(newTodo)" value="Create"/>
+    <input type="button" class="btn" ng-click="createTodo(newTodo)" value="Create"/>
 </body>
 
 </html>
