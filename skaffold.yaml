@@ -1,0 +1,10 @@
+apiVersion: skaffold/v1alpha2
+kind: Config
+build:
+  artifacts:
+  - imageName: venkyramachandran82/todo-ui
+    workspace: .
+deploy:
+  kubectl:
+    manifests:
+    - ./todo-ui.yaml
